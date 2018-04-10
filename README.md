@@ -1,4 +1,4 @@
-# frontend
+# Frontend for designers 
 
 Op deze website is een API ingeladen met films. Deze films worden laten zien in een carousel waar je doorheen kunt klikken. Tevens wordt er een samenvatting van elke film laten zien en een lijst met de acteurs die erin spelen. 
 
@@ -16,7 +16,8 @@ Door deze schets kon ik gemakkelijk met JQuery de HTML structuur maken.
 Doormiddel van de Principles of User Interface Design heb ik mijn website gemaakt. Door bijvoorbeeld de knoppen, zij zorgen ervoor dat de user in control blijft en de focus ligt op de afbeelding van de film.
 
 De carrousel heb ik de volgende code gebruikt:
-$(function () {
+
+     $(function () {
              function go_next() {
                  var current_movie = $('#main > article.active').next();
                  var last_movie = $('#main  > article').last();
@@ -66,3 +67,40 @@ $(function () {
                      go_next();
                  }
              }); //for: prev keyboard
+             
+             
+Door het gebruik van JQuery kon ik gemakkelijk functions aanmaken die de carrousel maken. De carrousel is gemaakt doormiddel van het gebruik van classes. De class "active" wordt de plaats op het article dat je op dat moment een display:'block' wil geven. Wanneer je op de pijltjes klikt wordt de class opgeschoven naar de volgende of vorige.
+
+De HTML structuur heb ik ook gemaakt met JQuery, namelijk zo:
+
+       $.getJSON("json.json", function (data) {
+             for (i = 0; i < data.length; i++) {
+                 var filmnaam = data[i].title;
+                 var actor = data[i].actors;
+                 var plot = data[i].plot;
+                 var cover = data[i].cover;
+
+                 $('section').append('<article id="movie' + i + '">\
+                    <h1>Anouks Favorite movies:</h1>\
+                    <img class = "animated flip flipOutY lightSpeedOut rotateIn"\
+                     src="' + cover + '">\
+                     <h1> ' + filmnaam + ' </h1>\ <h2>Plot</h2>\
+                    <p>' + plot + '</p>\
+                    <h1>Actors</h1>\
+                    <div class = "actors scrollmenu"></div></article>')
+
+                     for (a = 0; a < actor.length; a++) {
+                         var actor_name = actor[a].actor_name;
+                         var photo = actor[a].url_photo;
+
+
+                         $('#movie' + i + ' .actors').append('<article>\
+                    <img class "profile-picuters src="' + photo + '\
+                    "><h1>' + actor_name + '\</h1></article>')
+                     }; //for: actors
+                 }; //for: data
+             }).done(function () {
+             $('section > article:nth-of-type(1)').addClass('active');
+         });
+         
+Dit is een erg gemakkelijk optie om je JSON file in te laden, omdat je de HTML structuur zelf moet schrijven en er gemakkelijk classes aan kan geven.
