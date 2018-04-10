@@ -104,3 +104,45 @@ De HTML structuur heb ik ook gemaakt met JQuery, namelijk zo:
          });
          
 Dit is een erg gemakkelijk optie om je JSON file in te laden, omdat je de HTML structuur zelf moet schrijven en er gemakkelijk classes aan kan geven.
+
+De acteurs is scrollbaar door CSS.
+          
+               .actors.scrollmenu {
+                     overflow: auto;
+                     white-space: nowrap;
+                     text-decoration: none;
+                    }
+
+               .scrollmenu::-webkit-scrollbar {
+                    display: none;
+                    }
+  
+  
+De annimatie die aan de article is toegevoegd komt van een library in mijn bestand flip.css. Hierin staan verschillende animaties die je kan toevoegen doormiddel van classes, zoals deze:
+
+
+    @keyframes flipOutY {
+     from {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+    30% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+          }
+    }         
+     .flipOutY {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipOutY;
+    animation-name: flipOutY;
+     }
+
