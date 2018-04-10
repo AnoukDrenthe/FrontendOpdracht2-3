@@ -107,15 +107,15 @@ Dit is een erg gemakkelijk optie om je JSON file in te laden, omdat je de HTML s
 
 De acteurs is scrollbaar door CSS.
           
-               .actors.scrollmenu {
-                     overflow: auto;
-                     white-space: nowrap;
-                     text-decoration: none;
-                    }
+         .actors.scrollmenu {
+              overflow: auto;
+              white-space: nowrap;
+              text-decoration: none;
+           }
 
-               .scrollmenu::-webkit-scrollbar {
-                    display: none;
-                    }
+           .scrollmenu::-webkit-scrollbar {
+               display: none;
+           }
   
   
 De annimatie die aan de article is toegevoegd komt van een library in mijn bestand flip.css. Hierin staan verschillende animaties die je kan toevoegen doormiddel van classes, zoals deze:
