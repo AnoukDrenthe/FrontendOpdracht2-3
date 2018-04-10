@@ -146,3 +146,4 @@ De annimatie die aan de article is toegevoegd komt van een library in mijn besta
     animation-name: flipOutY;
      }
 
+Uiteindelijk is hier mijn eindproduct uitgekomen met mijn favorieten lijst van films
