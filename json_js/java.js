@@ -1,14 +1,13 @@
- $.getJSON("json.json", function (data) {
+ $.getJSON("json_js/json.json", function (data) {
              for (i = 0; i < data.length; i++) {
                  var filmnaam = data[i].title;
                  var actor = data[i].actors;
                  var plot = data[i].plot;
                  var cover = data[i].cover;
 
-                 $('section').append('<article id="movie' + i + '">\
+                 $('section').append('<article class = "animated flip flipOutY lightSpeedOut rotateIn" id="movie' + i + '">\
                     <h1>Anouks Favorite movies:</h1>\
-                    <img class = "animated flip flipOutY lightSpeedOut rotateIn"\
-                     src="' + cover + '">\
+                    <img src="' + cover + '">\
                      <h1> ' + filmnaam + ' </h1>\ <h2>Plot</h2>\
                     <p>' + plot + '</p>\
                     <h1>Actors</h1>\
